@@ -1,4 +1,7 @@
 const btnAdicionarTarefa = document.querySelector(".app__button--add-task");
+const btnCancelarTarefa = document.querySelector(
+  ".app__form-footer__button--cancel"
+);
 const formAdicionarTarefa = document.querySelector(".app__form-add-task");
 const textArea = document.querySelector(".app__form-textarea");
 const ulTarefas = document.querySelector(".app__section-task-list");
@@ -52,6 +55,11 @@ function criarElementoTarefa(tarefa) {
 
 btnAdicionarTarefa.addEventListener("click", () => {
   formAdicionarTarefa.classList.toggle("hidden");
+});
+
+btnCancelarTarefa.addEventListener("click", () => {
+  textArea.value = "";
+  formAdicionarTarefa.classList.add("hidden");
 });
 
 formAdicionarTarefa.addEventListener("submit", (evento) => {
